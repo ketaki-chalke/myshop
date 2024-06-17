@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block description %}"This is my description"{% endblock %}
+{% block robots %}index, follow{% endblock %}
+{% block keywords %}modern black suit ,Myshop{% endblock %}
+{% block css %}{% static "products/home.css" %}{% endblock %}
+{% block title %}Myshop new{% endblock %}
+{% block body %}
+<div id="intro">
+
+{% include "includes/nav.html" %}
+<div>
+<main class="suits-div">
+  <h2>Suits</h2>
+  <h2 class="h2-suits"><a href="{% url "productcat" "suits" %}">View all suits</a></h2>
+</main>
+</div>
+
+<main class="main-1">
+<h3><strong></strong></h3>
+<h3><strong></strong></h3>
+<h3><strong></strong></h3>
+<h3><strong></strong></h3>
+</main>
+
+
+
+
+<main class="products-container">
+  {% for product in products %}
+<div class="product-card">
+  <div class="review-con"><p>Reviews 4.8⭐</p></div>
+  <img src="{{ product.image.url }}" class="myimage">
+  <p class="item1"><strong>{{product.title}}</strong></p>
+  <p class="suit-card">{{product.description}}</p>
+  <a href="{% url "product_page" product.brand.title product.slug  %}">View product</a>
+</div>
+
+{% endfor %}
+</main> 
+</div>
+
+
+
+
+<section id="int1">
+<div style="width: 50%;">
+  <h1 class="heading-2">Best Clothing Quality</h1>
+<p class="para-2">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione sapiente aperiam ea eligendi 
+consectetur libero et enim natus esse molestias commodi, quas iure est beatae impedit adipisci 
+nesciunt minima?<br><br>
+<a onclick="hideNav()" href="SignUp1.html">Become a member</a>
+</p>
+</div>
+
+
+<!--<main class="vidflex">-->
+<video controls class="myvideo">
+  <source src="{% static "products/vid/intro-video.mp4" %}">
+</video>
+<!--</main>-->
+</section>
+
+<footer>&copy; 2024 Men's Suits Shop. All rights reserved.</footer>
+  {% endblock %}

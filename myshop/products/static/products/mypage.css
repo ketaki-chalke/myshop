@@ -1,0 +1,200 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  background-color: #EEEFF1;
+}
+
+.header img {
+  margin-right: auto;
+}
+
+header svg:hover {
+  cursor: pointer;
+}
+
+#moon-icon {
+  display: none;
+  transform: translateY(0px);
+}
+
+#sun-icon {
+  transform: translateY(0px);
+}
+
+.body-dark {
+  background-color: black;
+  color: #EEEFF1;
+}
+
+/* Navigation Styles */
+.Main-nav {
+  margin-top: 10px;
+}
+
+a {
+  font-size: 20px;
+  color: #3d414a;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+/* Main Section Styles */
+.main-1 {
+  display: flex;
+  gap: 125px;
+}
+
+main {
+  display: flex;
+}
+
+/* Container Styles */
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 0;
+  height: 60vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 3rem;
+  z-index: 1; /* Ensure it's above the slideshow */
+}
+
+.hero p {
+  font-size: 1.5rem;
+  z-index: 1; /* Ensure it's above the slideshow */
+}
+
+.hero .btn {
+  background-color: blueviolet;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 1rem;
+  position: absolute;
+  z-index: 1; /* Ensure it's above the slideshow */
+  top: 70%; /* Position the button at 50% from the top */
+  left: 50%; /* Position the button at 50% from the left */
+  transform: translate(-50%, -50%)
+}
+
+.hero .slideshow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Ensure it is behind the content */
+}
+
+.hero .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideAnimation 15s infinite;
+}
+
+.hero .slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.hero .slide:nth-child(2) {
+  animation-delay: 5s;
+}
+
+.hero .slide:nth-child(3) {
+  animation-delay: 10s;
+}
+
+@keyframes slideAnimation {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Products Section Styles */
+.products {
+  padding: 2rem 0;
+}
+
+.products h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  width: 30%;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.product-card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.product-card p {
+  color: blueviolet;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+
+
+
+
+

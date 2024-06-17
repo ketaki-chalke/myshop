@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block description %}{{product.description}}{% endblock %}
+{% block robots %}{% endblock %}
+{% block keywords %}signup,myshop{% endblock %}
+{% block css %}{% static "products/product.css" %}{% endblock %}
+{% block title %}{{product.title}}{% endblock %}
+{% block body %}
+
+
+
+{% include "includes/nav.html" %}
+ <div id="product-main-con">
+  <main>
+   <img src="{{product.image.url}}">
+   <div>
+    <h1 class="mine">{{product.title}}</h1>
+    <p>{{product.brand.title}}</p>
+    <p>{{product.description}}</p>
+    <button>Add to cart</button>
+   </div>
+  </main>
+  <section id="feedback">
+    <h3>Customer's Feedbacks:</h3>
+    {% if messages %}
+      {% for message in messages %}
+      <p style="color:green">{{message}}</p>
+      {% endfor %}
+      {% endif %}
+
+    <form method="POST">
+      {% csrf_token %}
+
+      {% for field in form %}
+        {{field.label_tag}}<br>
+        {{field}}<br>
+        {% if field.help_text %}
+         <p>{{field.help_text}}</p>
+        {% endif %}
+        {% for error in field.errors %}
+        <p style="color:red">{{error}}</p><br>
+      {% endfor %}
+      <br>
+      {% endfor %}
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  <section>
+    {% for review in reviews %}
+     <h4>{{review.name}} - {{review.rating}}
+      {% if review.rating == 5%}
+      ⭐⭐⭐⭐⭐
+      {% elif review.rating == 4%}
+      ⭐⭐⭐⭐
+      {% elif review.rating == 3%}
+      ⭐⭐⭐
+      {% elif review.rating == 2%}
+      ⭐⭐
+      {% else %}
+      ⭐
+      {% endif %}
+    </h4>
+     <p>{{review.text}}</p>
+    {%endfor%}
+    <br>
+  </section>
+ </div>
+ 
+  {% endblock %}

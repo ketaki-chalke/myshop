@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block description %}This is homepage{% endblock %}
+{% block robots %}{% endblock %}
+{% block keywords %}home,myshop{% endblock %}
+{% block css %}{% static "products/mypage.css" %}{% endblock %}
+{% block title %}Myshop{% endblock %}
+{% block body %}
+
+
+
+{% include "includes/nav.html" %}
+ 
+<section class="hero">
+  <div class="container">
+      <h2>Find Your Perfect Suit</h2>
+      <p>Discover our exclusive collection of men's suits</p>
+      <a href="{% url "home" %}" class="btn">Shop Now</a>
+      <div class="slideshow-container">
+        <div class="slide fade" style="background-image: url('{% static 'products/img/Formal_shirts_and_trousers.webp' %}');"></div>
+        <div class="slide fade" style="background-image: url('{% static 'products/img/Ceremonial_website_Image_1.webp' %}');"></div>
+        <div class="slide fade" style="background-image: url('{% static 'products/img/ss22_newarrivals.jpg' %}');"></div>
+    </div>
+  </div>
+</section>
+
+<section class="products">
+  <div class="container">
+      <h2>Featured Suits</h2>
+      <div class="product-grid">
+          <div class="product-card">
+              <img src="{% static "products/img/Classic Black Suit.jpg" %}" alt="Suit 1">
+              <h3>Classic Black Suit</h3>
+              <p>$299.99</p>
+          </div>
+          <div class="product-card">
+              <img src="{% static "products/img/Elegant Navy Suit.webp" %}" alt="Suit 2">
+              <h3>Elegant Navy Suit</h3>
+              <p>$349.99</p>
+          </div>
+          <div class="product-card">
+              <img src="{% static "products/img/Modern Grey Suit.jpg" %}" alt="Suit 3">
+              <h3>Modern Grey Suit</h3>
+              <p>$329.99</p>
+          </div>
+          <div class="product-card">
+              <img src="{% static "products/img/Tuxedo (Dinner Suit).webp" %}" alt="Suit 4">
+              <h3>Tuxedo (Dinner Suit)</h3>
+              <p>$319.99</p>
+          </div>
+          <div class="product-card">
+              <img src="{% static "products/img/Stylish Beige Suit.webp" %}" alt="Suit 5">
+              <h3>Stylish Beige Suit</h3>
+              <p>$819.99</p>
+          </div>
+          <div class="product-card">
+              <img src="{% static "products/img/Pinstripe Suit.jpg" %}" alt="Suit 6">
+              <h3>Pinstripe Suit</h3>
+              <p>$419.99</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+      <p>&copy; 2024 Men's Suits Shop. All rights reserved.</p>
+  </div>
+</footer>
+  
+  {% endblock %}

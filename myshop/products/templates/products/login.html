@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block description %}Login to your myshop account{% endblock %}
+{% block robots %}{% endblock %}
+{% block keywords %}login,myshop{% endblock %}
+{% block css %}{% static "products/signup.css" %}{% endblock %}
+{% block title %}Myshop Login{% endblock %}
+{% block body %}
+
+{% include "includes/nav.html" %}
+
+<form class="form-decor" method="POST">
+    {% csrf_token %}
+    <label for="username">Username:</label><br>
+    <input class="field" type="text" id="username" name="username"><br><br>
+
+    <label for="password">Password:</label><br>
+    <input class="field" type="password" id="password" name="password"><br><br>
+
+    <button class="Login-button" type="submit">Login</button>
+</form>
+
+{% endblock %}
